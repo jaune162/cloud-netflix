@@ -5,6 +5,7 @@ spring:
         git:
           uri: https://git.oschina.net/jaune/spring-cloud-config
           basedir: shop
+          search-paths: shop
 
 server:
   port: 8888

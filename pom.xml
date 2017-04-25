@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.5.RELEASE</version>
+        <version>1.5.2.RELEASE</version>
     </parent>
 
 	<groupId>com.wawscm</groupId>
@@ -20,6 +20,7 @@
 		<module>cloud-netflix-service</module>
         <module>cloud-netflix-client-ribbon</module>
         <module>spring-cloud-config-server</module>
+        <module>spring-cloud-config-client</module>
     </modules>
 
 	<repositories>
