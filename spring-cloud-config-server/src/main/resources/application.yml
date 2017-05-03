@@ -1,3 +1,8 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
 spring:
   cloud:
     config:
@@ -6,6 +11,8 @@ spring:
           uri: https://git.oschina.net/jaune/spring-cloud-config
           basedir: shop
           search-paths: shop
+  application:
+    name: CONFIG-SERVER
 
 server:
   port: 8888
