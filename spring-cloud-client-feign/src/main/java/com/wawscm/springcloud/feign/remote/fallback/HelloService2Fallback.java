@@ -3,6 +3,7 @@
  */
 package com.wawscm.springcloud.feign.remote.fallback;
 
+import com.wawscm.springcloud.feign.model.User;
 import org.springframework.stereotype.Component;
 
 import com.wawscm.springcloud.feign.remote.client.HelloService2Client;
@@ -17,7 +18,7 @@ import com.wawscm.springcloud.feign.remote.client.HelloService2Client;
 public class HelloService2Fallback implements HelloService2Client {
 
     @Override
-    public String hello() {
+    public String json(User user) {
         return "ERROR";
     }
 }

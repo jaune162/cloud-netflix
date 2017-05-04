@@ -3,6 +3,7 @@
  */
 package com.wawscm.springcloud.feign.controller;
 
+import com.wawscm.springcloud.feign.model.User;
 import com.wawscm.springcloud.feign.remote.HelloService2;
 import com.wawscm.springcloud.feign.remote.client.HelloService2Client;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +19,16 @@ import com.wawscm.springcloud.feign.remote.HelloService;
  * @since 1.0.0
  */
 @RestController
-public class FeignClientTest2Controller implements HelloService2 {
+public class FeignClientTest2Controller {
 
     @Autowired
     private HelloService2Client helloService2Client;
 
     @RequestMapping("/test")
-    @Override
     public String hello() {
-        return helloService2Client.hello();
+        User user = new User();
+        user.setUsername("Jaune");
+        user.setPassword("123456");
+        return helloService2Client.json(user);
     }
 }

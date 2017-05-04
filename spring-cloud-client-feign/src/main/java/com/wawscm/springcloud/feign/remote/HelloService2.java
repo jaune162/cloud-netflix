@@ -3,6 +3,8 @@
  */
 package com.wawscm.springcloud.feign.remote;
 
+import com.wawscm.springcloud.feign.model.User;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 public interface HelloService2 {
 
-    @RequestMapping(value = "/")
-    String hello();
+    @RequestMapping(value = "/json")
+    String json(@RequestBody User user);
 
 }
