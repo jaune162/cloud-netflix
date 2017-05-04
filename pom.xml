@@ -21,6 +21,7 @@
         <module>cloud-netflix-client-ribbon</module>
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-config-client</module>
+        <module>cloud-zuul-gateway</module>
     </modules>
 
 	<repositories>
@@ -44,6 +45,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+    </dependencies>
 
 
 

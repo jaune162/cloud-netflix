@@ -4,6 +4,7 @@
 package com.wawscm.netflix.client.service.impl;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.wawscm.netflix.client.service.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +27,9 @@ public class HelloServiceImpl implements HelloService {
     private RestTemplate restTemplate;
 
     @Override
-    //@HystrixCommand(fallbackMethod = "addServiceFallback", ignoreExceptions = Exception.class)
+    @HystrixCommand(fallbackMethod = "addServiceFallback", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "10000")
+    })
     public String hello() {
         String result = restTemplate.getForEntity("http://STORES/", String.class).getBody();
         logger.info(result);

@@ -1,0 +1,23 @@
+server:
+  port: 3333
+spring:
+  application:
+    name: gateway
+zuul:
+  routes:
+    config-server:
+      path: /config/**
+      service-id: CONFIG-SERVER
+      sensitive-headers: Cookie,Set-Cookie
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+endpoints:
+  env:
+    enabled: true
+    sensitive: false
+
