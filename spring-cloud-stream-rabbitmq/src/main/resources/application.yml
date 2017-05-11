@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: foo
+          binder: rabbit1
+      binders:
+        rabbit1:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 127.0.0.1
+                port: 5672
+                username: guest
+                password: guest

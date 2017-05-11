@@ -3,18 +3,23 @@ spring:
     active: dev
   application:
     name: shop
-    admin:
-      enabled:
   cloud:
     config:
       #uri: http://localhost:8888
       discovery:
         enabled: true
         service-id: CONFIG-SERVER
-
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: false
+security:
+  basic:
+    authorize-mode: none
 
