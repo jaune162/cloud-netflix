@@ -3,11 +3,13 @@
  */
 package com.wawscm.springcloud.stream;
 
+import com.wawscm.springcloud.stream.mode.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
+import org.springframework.messaging.handler.annotation.MessageMapping;
 
 /**
  * rabbitmq stream application
@@ -24,7 +26,8 @@ public class RabbitMQApplication {
     }
 
     @StreamListener(Sink.INPUT)
-    public void processVote(Object obj) {
-        System.out.println(obj);
+    @MessageMapping()
+    public void processVote(User user) {
+        System.out.println(user);
     }
 }
