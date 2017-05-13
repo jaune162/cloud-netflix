@@ -29,6 +29,7 @@
         <module>cloud-zuul-gateway</module>
         <module>spring-cloud-client-feign</module>
         <module>spring-cloud-stream-rabbitmq</module>
+        <module>spring-cloud-auth2-server</module>
     </modules>
 
 	<repositories>
