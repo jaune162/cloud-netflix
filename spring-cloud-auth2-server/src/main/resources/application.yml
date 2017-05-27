@@ -1,16 +1,15 @@
 security:
   oauth2:
-
     client:
       client-id: client
       client-secret: test
       authorized-grant-types: authorization_code
       scope: app
-  ignored: /css/**,/js/**,/favicon.ico,/webjars/**,/oauth/authorize,/oauth/token
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   user:
     password: 123456
     name: user
   basic:
-    enabled: false
+    enabled: true
 server:
   port: 3333

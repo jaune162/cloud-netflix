@@ -38,6 +38,10 @@ public class CustomerOAuth2RequestFactory extends DefaultOAuth2RequestFactory {
             authorizationParameters.put("response_type", "code");
         }
 
+        if (!authorizationParameters.containsKey("scope")) {
+            authorizationParameters.put("scope", "service");
+        }
+
         return super.createAuthorizationRequest(authorizationParameters);
     }
 }
